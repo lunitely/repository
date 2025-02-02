@@ -1,8 +1,8 @@
 [Plymouth Theme]
-Name=bgrt
+Name=lunitely
 Description=Lunitely Boot Animation
 ModuleName=script
 
 [script]
-ImageDir=/usr/share/plymouth/themes/bgrt
-ScriptFile=/usr/share/plymouth/themes/bgrt/lunitely.script
+ImageDir=/usr/share/plymouth/themes/lunitely
+ScriptFile=/usr/share/plymouth/themes/lunitely/lunitely.script

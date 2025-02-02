@@ -1,0 +1,23 @@
+# https://www.gnome-look.org/p/2216301
+
+screen_width = Window.GetWidth(0);
+screen_height = Window.GetHeight(0);
+screen_half_width = Window.GetWidth(0) / 2;
+screen_half_height = Window.GetHeight(0) / 2;
+
+for (i = 0; i < 70; i++)
+  flyingman_image[i] = Image("progress-" + i + ".png");
+flyingman_sprite = Sprite();
+
+flyingman_sprite.SetX(Window.GetX() + (Window.GetWidth(0) / 2 - flyingman_image[0].GetWidth() / 2));
+flyingman_sprite.SetY(Window.GetY() + (Window.GetHeight(0) / 2 - flyingman_image[0].GetHeight() / 2));
+
+progress = 1;
+
+fun refresh_callback ()
+  {
+    flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 2) % 89]);
+    progress++;
+  }
+
+Plymouth.SetRefreshFunction (refresh_callback);

@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=bgrt
+Description=Lunitely Boot Animation
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/bgrt
+ScriptFile=/usr/share/plymouth/themes/bgrt/lunitely.script

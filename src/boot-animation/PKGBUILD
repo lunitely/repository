@@ -1,0 +1,18 @@
+# Maintainer: Hackrland <contact@hackrland.dev>
+
+pkgname=boot-animation
+pkgver=1.0
+pkgrel=1
+pkgdesc="Boot Animation for Lunitely"
+arch=('any')
+url="https://lunitely.hackrland.dev"
+license=('MIT')
+depends=('plymouth')
+
+prepare() {
+	cp -af ../theme/. "$srcdir"
+}
+
+package() {
+	(find lunitely -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/plymouth/themes/{}" \;)
+}

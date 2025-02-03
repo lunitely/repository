@@ -3,7 +3,7 @@ for dir in src/*; do
     cd "$dir"
     makepkg
     cp -f *.pkg.tar.zst ../../x86_64
-    rm -rf *.pkg.tar.zst pkg src
+    rm -rf *.pkg.tar.zst pkg src *.tar.gz *LICENSE*
     cd ../..
   fi
 done

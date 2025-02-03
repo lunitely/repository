@@ -8,4 +8,6 @@ for dir in src/*; do
   fi
 done
 
+cd x86_64
 repo-add lunitely.db.tar.gz *.pkg.tar.zst
+cd ..

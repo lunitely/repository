@@ -1,16 +1,18 @@
 echo 'allow-weak-key-signatures' >> /etc/pacman.d/gnupg/gpg.conf
 curl -s -O 'https://repo.hackrland.dev/lunitely-keyring.pkg.tar.zst'
 curl -s -O 'https://repo.hackrland.dev/lunitely-keyring.pkg.tar.zst.sig'
+curl -s -O 'https://repo.hackrland.dev/mirrorlist'
 
 gpg --keyserver keyserver.ubuntu.com --recv-keys D3B156CAEA92A171D2885AC5BE73F23C001F42E6
-gpg --keyserver-options no-auto-key-retrieve --with-fingerprint lunitely-keyring.pkg.tar.zst.sig
+gpg --keyserver-options no-auto-key-retrieve --with-fingerprint ./lunitely-keyring.pkg.tar.zst.sig
 
 pacman-key --init
-pacman -U --noconfirm lunitely-keyring.pkg.tar.zst
+pacman -U --noconfirm ./lunitely-keyring.pkg.tar.zst
 pacman-key --populate
 
 echo "[lunitely]" >> /etc/pacman.conf
-echo "Server = https://repo.hackrland.dev/$arch" >> /etc/pacman.conf
+echo "Include = /etc/pacman.d/lunitely-mirrorlist" >> /etc/pacman.conf
+mv mirrorlist /etc/pacman.d/lunitely-mirrorlist
 
 pacman -Syy
 

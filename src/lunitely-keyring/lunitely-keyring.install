@@ -1,0 +1,7 @@
+post_upgrade() {
+  pacman-key --populate lunitely-keyring
+}
+
+post_install() {
+  post_upgrade
+}

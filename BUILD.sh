@@ -3,12 +3,12 @@ for dir in src/*; do
     cd "$dir"
     echo $dir
     git pull
-    makepkg -cCf
+    makepkg -cCf --sign
     cp -f *.pkg.tar.zst ../../x86_64
     cd ../..
   fi
 done
 
 cd x86_64
-repo-add lunitely.db.tar.gz *.pkg.tar.zst
+repo-add lunitely.db.tar.gz *.pkg.tar.zst --sign --key D3B156CAEA92A171D2885AC5BE73F23C001F42E6
 cd ..

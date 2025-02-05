@@ -4,7 +4,7 @@ for dir in src/*; do
     echo $dir
     git pull
     makepkg -cCf --sign
-    cp -f *.pkg.tar.zst ../../x86_64
+    cp -f *.pkg.tar.zst* ../../x86_64
     cd ../..
   fi
 done

@@ -10,5 +10,5 @@ source=('lunitely.gpg')
 sha256sums=('6bd94befa56745abf9125dfa239a0fa14bc0269fe010ec50777b49476296c5b2')
 
 package() {
-  install -Dm644 lunitely.gpg "$pkgdir/usr/share/pacman/keyrings/$pkgname.gpg"
+  install -Dm644 lunitely.gpg "$pkgdir/usr/share/pacman/keyrings/lunitely.gpg"
 }

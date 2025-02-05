@@ -1,5 +1,5 @@
 post_upgrade() {
-  pacman-key --populate lunitely-keyring
+  pacman-key --populate lunitely
 }
 
 post_install() {

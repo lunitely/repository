@@ -8,6 +8,7 @@ gpg --import /tmp/$NAME.gpg
 
 cp /tmp/$NAME.gpg /usr/share/pacman/keyrings/
 
+pacman-key --init
 pacman-key --recv-keys $KEY
 pacman-key --add /tmp/$NAME.gpg
 pacman-key --finger $KEY

@@ -1,7 +1,3 @@
 [submodule "boot-animation"]
     path = src/boot-animation
     url = git://github.com/lunitely/boot-animation.git
-
-[submodule "flatseal"]
-    path = src/flatseal
-    url = git://aur.archlinux.org/flatseal.git

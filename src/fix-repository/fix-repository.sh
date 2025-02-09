@@ -16,5 +16,3 @@ pacman-key --init
 pacman-key --populate $NAME
 
 rm /tmp/$NAME.gpg
-
-pacman -Syy

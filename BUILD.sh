@@ -10,5 +10,5 @@ for dir in src/*; do
 done
 
 cd x86_64
-repo-add lunitely.db.tar.gz *.pkg.tar.zst --sign --key D3B156CAEA92A171D2885AC5BE73F23C001F42E6
+repo-add lunitely.db.tar.gz *.pkg.tar.zst --sign --key 4B758E0A1A2F4146B53E97F6980CD593E882D694
 cd ..

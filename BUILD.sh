@@ -3,7 +3,7 @@ for dir in src/*; do
     cd "$dir"
     echo $dir
     git pull
-    makepkg -cCfrs --sign
+    makepkg -cCfrs --sign --noconfirm
     cp -f *.pkg.tar.zst* ../../x86_64
     cd ../..
   fi

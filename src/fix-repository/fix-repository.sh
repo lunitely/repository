@@ -16,8 +16,4 @@ pacman-key --populate $NAME
 
 rm /tmp/$NAME.gpg
 
-echo "" >> /etc/pacman.conf
-echo "[$NAME]" >> /etc/pacman.conf
-echo "Server = https://repo.hackrland.dev/\$arch" >> /etc/pacman.conf
-
 pacman -Syy

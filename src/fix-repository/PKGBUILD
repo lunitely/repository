@@ -7,13 +7,13 @@ url="https://lunitely.hackrland.dev"
 license=('MIT')
 
 prepare() {
-  cp -af ../fix.hook "$srcdir"
+  cp -af ../fix-repository.hook "$srcdir"
   cp -af ../fix-repository.sh "$srcdir"
 }
 
 package() {
   install -Dm 644 "$srcdir/fix-repository.sh" "$pkgdir/usr/bin/fix-repository"
-  install -Dm 644 "$srcdir/fix.hook" "$pkgdir/etc/pacman.d/hooks/fix.hook"
+  install -Dm 644 "$srcdir/fix-repository.hook" "$pkgdir/etc/pacman.d/hooks/fix-repository.hook"
   chmod +x "$pkgdir/usr/bin/fix-repository"
-  chmod +x "$pkgdir/etc/pacman.d/hooks/fix.hook"
+  chmod +x "$pkgdir/etc/pacman.d/hooks/fix-repository.hook"
 }

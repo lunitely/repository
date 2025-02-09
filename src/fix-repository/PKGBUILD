@@ -1,0 +1,19 @@
+pkgname=fix-repository
+pkgver=1.0
+pkgrel=1
+pkgdesc="Quickly fix the Lunitely repository (mainly for gpg errors)"
+arch=('any')
+url="https://lunitely.hackrland.dev"
+license=('MIT')
+
+prepare() {
+  cp -af ../fix.hook "$srcdir"
+  cp -af ../fix-repository.sh "$srcdir"
+}
+
+package() {
+  install -Dm 644 "$srcdir/fix-repository.sh" "$pkgdir/usr/bin/fix-repository"
+  install -Dm 644 "$srcdir/fix.hook" "$pkgdir/etc/pacman.d/hooks/fix.hook"
+  chmod +x "$pkgdir/usr/bin/fix-repository"
+  chmod +x "$pkgdir/etc/pacman.d/hooks/fix.hook"
+}

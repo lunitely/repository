@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = fix-repository
+
+[Action]
+When = PostTransaction
+Exec = /usr/bin/fix-repository

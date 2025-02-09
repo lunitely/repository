@@ -2,7 +2,7 @@
 KEY=4B758E0A1A2F4146B53E97F6980CD593E882D694
 NAME=lunitely
 
-gpg --recv-keys $KEY
+gpg --keyserver keyserver.ubuntu.com --recv-keys $KEY
 gpg --output /tmp/$NAME.gpg --armor --export $KEY
 gpg --import /tmp/$NAME.gpg
 

@@ -4,7 +4,8 @@ NAME=lunitely
 
 gpg --keyserver keyserver.ubuntu.com --recv-keys $KEY
 gpg --output /tmp/$NAME.gpg --armor --export $KEY
-gpg --import /tmp/$NAME.gpg
+echo "$KEY:6" > /tmp/$NAME.txt
+gpg --import-ownertrust /tmp/$NAME.txt
 
 cp /tmp/$NAME.gpg /usr/share/pacman/keyrings/
 
@@ -17,3 +18,4 @@ pacman-key --init
 pacman-key --populate $NAME
 
 rm /tmp/$NAME.gpg
+rm /tmp/$NAME.txt
